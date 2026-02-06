@@ -1,13 +1,23 @@
 import './NavBar.css';
 
-function NavBar() {
+function NavBar({ setCurrentPage }) {
+  const navLinks = [
+    {id: 'home', label: 'Home'},
+    {id: 'profile', label: 'Profile'},
+    {id: 'settings', label: 'Settings'},
+    {id: 'search', label: 'Search'},
+    {id: 'saved', label: 'Bookmarks'}
+  ]
     return (
-      <nav className="nav-bar">
+      <nav className='nav-bar'>
         <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#profile">Profile</a></li>
-          <li><a href="#settings">Settings</a></li>
-          <li><a href="#search">Search</a></li>
+          {navLinks.map((link) => (
+            <li key={link.id}>
+              <button 
+                onClick={() => setCurrentPage(link.id)}
+                    >{link.label}</button>
+            </li>
+          ))}
         </ul>
       </nav>
       )

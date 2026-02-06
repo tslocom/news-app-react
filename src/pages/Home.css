@@ -1,0 +1,22 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  background-color: #ffffff;
+}
+
+.home > h1 {
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
+  letter-spacing: -0.5px;
+}
+
+.home > div:nth-child(2) {
+  flex: 1;
+  overflow-y: auto;
+}

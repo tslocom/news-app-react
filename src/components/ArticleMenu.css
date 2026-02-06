@@ -1,0 +1,74 @@
+.article-menu {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.article-menu button {
+  background: none;
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+  font-weight: bold;
+  letter-spacing: -0.5px;
+}
+
+.article-menu button:hover {
+  background-color: var(--hover-bg);
+  color: var(--text-primary);
+  border-color: var(--accent-color);
+}
+
+.article-menu button:active {
+  transform: scale(0.95);
+}
+
+.article-menu ul {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: var(--secondary-color);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  list-style: none;
+  margin: 0.5rem 0 0 0;
+  padding: 0;
+  min-width: 150px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+.article-menu li {
+  margin: 0;
+}
+
+.article-menu li:first-child {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.article-menu li:last-child {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.article-menu li {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.article-menu li:hover {
+  background-color: var(--accent-color);
+  color: var(--secondary-color);
+}
+
+.article-menu li + li {
+  border-top: 1px solid var(--border-color);
+}
