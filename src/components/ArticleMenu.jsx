@@ -2,11 +2,12 @@ import './ArticleMenu.css';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-function ArticleMenu({ item, isOpen, toggleMenu, onSave }) {
+function ArticleMenu({ item, isOpen, toggleMenu, onSave, onUnsave, isSaved }) {
     const options = [
-        { id: 'save', label: 'Bookmark', action: () => onSave(item) },
-        { id: 'share', label: 'Share', action: () => console.log('Share') },
-        { id: 'hide', label: 'Hide', action: () => console.log('Hide') },
+        { id: 'save', label: 'Bookmark', action: () => onSave(item), show: !isSaved },
+        { id: 'share', label: 'Share', action: () => console.log('Share'), show: true },
+        { id: 'hide', label: 'Hide', action: () => console.log('Hide'), show: true },
+        { id: 'unsave', label: 'Remove Bookmark', action: () => onUnsave(item.id), show: isSaved }
     ]    
         useEffect(() => {
             if (!isOpen) return;
@@ -22,10 +23,12 @@ function ArticleMenu({ item, isOpen, toggleMenu, onSave }) {
                     toggleMenu()}}
                 >***</button>
             {isOpen && <ul>
-                {options.map((opt) => (
+                {options
+                    .filter(opt => opt.show === true)
+                    .map((opt) => (
                     <li 
                         key={opt.id}
-                        onClick={() => opt.action(item)}
+                        onClick={() => opt.action()}
                         >{opt.label}</li>
                 ))}
             </ul>}

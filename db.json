@@ -1,0 +1,108 @@
+{
+  "articles": [
+    {
+      "id": "1",
+      "title": "Apple Releases New AppleTV 4K",
+      "link": "insert link here",
+      "summary": "Apple has announced the release of the new AppleTV 4K with improved performance and features."
+    },
+    {
+      "id": "2",
+      "title": "SpaceX Launches New Rocket",
+      "link": "insert link here",
+      "summary": "SpaceX successfully launched its latest rocket, marking a significant milestone in space exploration."
+    },
+    {
+      "id": "3",
+      "title": "New 50 Series GPUs Staying in Stock",
+      "link": "insert link here",
+      "summary": "New 50 Series GPUs are now available and staying in stock due to improved supply chain management."
+    },
+    {
+      "id": "4",
+      "title": "Mars Rover Discovers Ancient Water Ice",
+      "link": "insert link here",
+      "summary": "The latest mission to the red planet has uncovered significant deposits of water ice just below the surface."
+    },
+    {
+      "id": "5",
+      "title": "Quantum Computing Breakthrough in Europe",
+      "link": "insert link here",
+      "summary": "Researchers in Berlin have successfully stabilized a 100-qubit processor for over ten minutes."
+    },
+    {
+      "id": "6",
+      "title": "Global Electric Vehicle Sales Top 40%",
+      "link": "insert link here",
+      "summary": "New data suggests that nearly half of all new car purchases in the last quarter were fully electric models."
+    },
+    {
+      "id": "7",
+      "title": "AI Model Predicts Rare Weather Patterns",
+      "link": "insert link here",
+      "summary": "A new neural network is helping meteorologists predict flash floods with 90% accuracy hours in advance."
+    },
+    {
+      "id": "8",
+      "title": "New Biotech Patch Heals Wounds Faster",
+      "link": "insert link here",
+      "summary": "The flexible patch uses smart sensors to deliver medicine exactly when the skin begins to show signs of inflammation."
+    },
+    {
+      "id": "9",
+      "title": "Ocean Cleanup Project Removes 100 Tons",
+      "link": "insert link here",
+      "summary": "The latest deployment in the Pacific has successfully cleared a record-breaking amount of plastic waste."
+    },
+    {
+      "id": "10",
+      "title": "Steam Deck 2 Rumors Heat Up",
+      "link": "insert link here",
+      "summary": "Supply chain leaks suggest a new handheld is in development with an OLED screen and improved battery life."
+    },
+    {
+      "id": "11",
+      "title": "Rare Solar Eclipse Visible Next Month",
+      "link": "insert link here",
+      "summary": "Astronomers are preparing for a unique celestial event that won't happen again for another thirty years."
+    },
+    {
+      "id": "12",
+      "title": "Coffee Shortages Expected Amid Drought",
+      "link": "insert link here",
+      "summary": "Global bean prices are rising as major producers face unprecedented weather challenges this season."
+    },
+    {
+      "id": "13",
+      "title": "Revolutionary Solid-State Battery Tested",
+      "link": "insert link here",
+      "summary": "A startup claims their new battery can charge a smartphone in under 3 minutes without overheating."
+    },
+    {
+      "id": "14",
+      "title": "Virtual Reality Workplace Adoption Grows",
+      "link": "insert link here",
+      "summary": "More companies are opting for VR meeting rooms to combat 'Zoom fatigue' in remote teams."
+    },
+    {
+      "id": "15",
+      "title": "James Webb Telescope Captures Dying Star",
+      "link": "insert link here",
+      "summary": "The clearest image yet of a supernova has provided scientists with new data on the origins of gold."
+    }
+  ],
+  "saved": [
+    {
+      "id": "7",
+      "title": "AI Model Predicts Rare Weather Patterns",
+      "link": "insert link here",
+      "summary": "A new neural network is helping meteorologists predict flash floods with 90% accuracy hours in advance."
+    },
+    {
+      "id": "3",
+      "title": "New 50 Series GPUs Staying in Stock",
+      "link": "insert link here",
+      "summary": "New 50 Series GPUs are now available and staying in stock due to improved supply chain management."
+    }
+  ]
+}

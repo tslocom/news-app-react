@@ -1,19 +1,26 @@
   import { useState } from 'react'
+  import { useEffect } from 'react'
   import ArticleMenu from './ArticleMenu.jsx'
   import './NewsFeed.css'
 
-  function NewsFeed({ onSave }) {
-  const [articles, setArticles] = useState([
-    {id: 1, title: 'Apple Releases New AppleTV 4K', link: 'insert link here', summary: 'Apple has announced the release of the new AppleTV 4K with improved performance and features.'},
-    {id: 2, title: 'SpaceX Launches New Rocket', link: 'insert link here', summary: 'SpaceX successfully launched its latest rocket, marking a significant milestone in space exploration.'},
-    {id: 3, title: 'New 50 Series GPUs Staying in Stock', link: 'insert link here', summary: 'New 50 Series GPUs are now available and staying in stock due to improved supply chain management.'},
-  ])
+  function NewsFeed({ onSave, onUnsave, savedArticles }) {
+  const [articles, setArticles] = useState([])
+    useEffect(() => {
+      const getArticles = async () => {
+        const response = await fetch("http://localhost:3001/articles");
+        const data = await response.json();
+        setArticles(data);
+      };
+    getArticles();
+    }, [])
 
   const [openMenuId, setOpenMenuId] = useState()
 
   return (
     <div className='news-feed'>
-      {articles.map(item => (
+      {articles.map(item => {
+        const isBookmarked = savedArticles.some(saved => saved.id === item.id);
+        return (
         <div key={item.id} className='news-article' style={{ zIndex: openMenuId === item.id ? 999 : 1, position: 'relative' }}>
           <div key={item.id} className='news-card'>
             <a href={item.link} className="main-link">
@@ -24,10 +31,12 @@
             isOpen={openMenuId === item.id}
             toggleMenu={() => setOpenMenuId(openMenuId === item.id ? null : item.id)}
             onSave={onSave}
+            onUnsave={onUnsave}
+            isSaved={isBookmarked}
              />
           </div>
         </div>
-      ))}
+      )})}
     </div>
   )
   }
