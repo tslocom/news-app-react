@@ -9,12 +9,12 @@ function ArticleMenu({ item, isOpen, toggleMenu, onSave, onUnsave, isSaved }) {
         { id: 'hide', label: 'Hide', action: () => console.log('Hide'), show: true },
         { id: 'unsave', label: 'Remove Bookmark', action: () => onUnsave(item.id), show: isSaved }
     ]    
-        useEffect(() => {
-            if (!isOpen) return;
-            const handleGlobalClick = () => toggleMenu();
-            window.addEventListener('click', handleGlobalClick);
-            return () => window.removeEventListener('click', handleGlobalClick);}, 
-            [isOpen, toggleMenu]);
+    useEffect(() => {
+        if (!isOpen) return;
+        const handleGlobalClick = () => toggleMenu();
+        window.addEventListener('click', handleGlobalClick);
+        return () => window.removeEventListener('click', handleGlobalClick);}, 
+        [isOpen, toggleMenu]);
     return (
         <div className='article-menu'>
             <button

@@ -2,7 +2,11 @@
   background-color: var(--primary-color);
   border-top: 1px solid var(--border-color);
   padding: 0;
-  margin-top: auto;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
 }
 
 .nav-bar ul {
