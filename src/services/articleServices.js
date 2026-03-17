@@ -23,5 +23,5 @@ export const removeSavedArticle = async (id) => {
     method: "DELETE"
   })
   if (response.ok) {
-    setSavedArticles(prev => prev.filter(article => article.id !== id));
-  }};
+    return id;
+  }}

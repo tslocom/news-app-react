@@ -105,12 +105,6 @@
       "summary": "New 50 Series GPUs are now available and staying in stock due to improved supply chain management."
     },
     {
-      "id": "1",
-      "title": "Apple Releases New AppleTV 4K",
-      "link": "insert link here",
-      "summary": "Apple has announced the release of the new AppleTV 4K with improved performance and features."
-    },
-    {
       "id": "2",
       "title": "SpaceX Launches New Rocket",
       "link": "insert link here",
@@ -127,6 +121,12 @@
       "title": "James Webb Telescope Captures Dying Star",
       "link": "insert link here",
       "summary": "The clearest image yet of a supernova has provided scientists with new data on the origins of gold."
+    },
+    {
+      "id": "12",
+      "title": "Coffee Shortages Expected Amid Drought",
+      "link": "insert link here",
+      "summary": "Global bean prices are rising as major producers face unprecedented weather challenges this season."
     }
   ]
 }
