@@ -7,9 +7,9 @@
   const [articles, setArticles] = useState([])
     useEffect(() => {
       const getArticles = async () => {
-        const response = await fetch("http://localhost:3001/articles");
+        const response = await fetch("http://127.0.0.1:8000/api/articles/newsfeed");
         const data = await response.json();
-        setArticles(data);
+        setArticles(data.articles);
       };
     getArticles();
     }, [])

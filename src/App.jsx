@@ -19,14 +19,14 @@ function App() {
     addSavedArticle(item).then(savedItem => {
       setSavedArticles([...savedArticles, savedItem])})
     }
-    const onUnsave = async (id) => {
+  const onUnsave = async (id) => {
         const deletedId = await removeSavedArticle(id);
         if (deletedId) {
           setSavedArticles(prevArticles =>
               prevArticles.filter(article => article.id !== deletedId)
           );
         }
-      }
+    }
     
   return (
     <div className='app'>
