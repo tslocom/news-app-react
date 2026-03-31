@@ -1,5 +1,5 @@
 To run locally:
-    Uses https://github/com/tslocom/news_api_python.git for the back end  
+    Uses https://github.com/tslocom/news_api_python for the back end  
     Please go copy that repo as well and follow README instructions to run
     Install Vite and json-server
     Run json-server using npx json-server --watch db.json --port 3001
