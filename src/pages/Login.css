@@ -1,0 +1,73 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  /* Taking full height within the .app-content wrapper */
+  flex: 1;
+}
+
+.login-container h1 {
+  margin-bottom: 2rem;
+  color: #333;
+  font-size: 24px;
+}
+
+.login-form {
+  background: white;
+  padding: 2rem 3rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+.form-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-controls input {
+  padding: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.form-controls input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+.form-controls button {
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-controls button:first-of-type {
+  background-color: #28a745;
+}
+
+.form-controls button:first-of-type:hover {
+  background-color: #218838;
+}
+
+.form-controls button:last-of-type {
+  background-color: #007bff;
+}
+
+.form-controls button:last-of-type:hover {
+  background-color: #0056b3;
+}

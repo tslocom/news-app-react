@@ -1,15 +1,36 @@
-const BASE_URL = "http://localhost:3001";
-export const getSavedArticles = async () => {
-      const response = await fetch(`${BASE_URL}/saved`);
+const BASE_URL = "http://127.0.0.1:8000/api/articles/";
+
+export const getArticles = async () => {
+      const token = localStorage.getItem('token');
+      const response = await fetch(`${BASE_URL}newsfeed/`, {
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Token ${token}`
+        }
+      });
       const data = await response.json();
-      return(data)
+      return(data.articles);
+      };
+
+export const getSavedArticles = async () => {
+      const token = localStorage.getItem('token');
+      const response = await fetch(`${BASE_URL}bookmarks/`, {
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Token ${token}`
+        }
+      });
+      const data = await response.json();
+      return(data.articles)
     };
 
 export const addSavedArticle = async (item) => {
-      const response = await fetch(`${BASE_URL}/saved`, {
+      const token = localStorage.getItem('token');
+      const response = await fetch(`${BASE_URL}bookmarks/`, {
           method: "POST",
           headers: {
               "Content-Type": "application/json",
+              "Authorization": `Token ${token}`
           },
           body: JSON.stringify(item),
       });
@@ -19,8 +40,13 @@ export const addSavedArticle = async (item) => {
     }}
 
 export const removeSavedArticle = async (id) => {
-  const response = await fetch (`http://localhost:3001/saved/${id}`, {
-    method: "DELETE"
+  const token = localStorage.getItem('token');
+  const response = await fetch (`${BASE_URL}bookmarks/${id}`, {
+    method: "DELETE",
+    headers: {
+    "Content-Type": "application/json",
+    "Authorization": `Token ${token}`
+          },
   })
   if (response.ok) {
     return id;

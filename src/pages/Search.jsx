@@ -1,4 +1,4 @@
-import './Search.jsx'
+import './Search.css'
 
 function Search() {
 }

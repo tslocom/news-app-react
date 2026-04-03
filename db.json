@@ -1,5 +1,5 @@
 {
-  "articles": [
+  "articles/newsfeed": [
     {
       "id": "1",
       "title": "Apple Releases New AppleTV 4K",
@@ -91,7 +91,7 @@
       "summary": "The clearest image yet of a supernova has provided scientists with new data on the origins of gold."
     }
   ],
-  "saved": [
+  "articles/bookmarks": [
     {
       "id": "7",
       "title": "AI Model Predicts Rare Weather Patterns",
