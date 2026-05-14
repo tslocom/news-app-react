@@ -1,12 +1,11 @@
-import { useState, useEffect } from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Home from './pages/Home.jsx'
-import Bookmarks from './pages/Bookmarks.jsx'
-import NavBar from './components/NavBar.jsx'
-import Search from './pages/Search.jsx'
 import Login from './pages/Login.jsx'
+import Profile from './pages/Profile.jsx'
 import ProtectedRoute from './components/ProtectedRoute.jsx'
-import './App.css'
+import InitialTagSelector from './pages/InitialTagSelector.jsx'
+import InitialPublicationSelector from './pages/InitialPublicationSelector.jsx'
+import AppLayout from './components/AppLayout.jsx'
 
 function App() {
 
@@ -14,12 +13,16 @@ function App() {
     <div className='app'>
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<ProtectedRoute><Navigate replace to="/home" /></ProtectedRoute>} />
-        <Route path="/home" element={<ProtectedRoute><Home/></ProtectedRoute>} />
-        <Route path="/bookmarks" element={<Bookmarks/>} />
-        <Route path="/search" element={<Search />} />
+        <Route path="/choosepublications" element={<InitialPublicationSelector />} />
+        <Route path="/choosetags" element={<InitialTagSelector />} />
+
+        <Route element={<ProtectedRoute><AppLayout /></ProtectedRoute>}>
+          <Route path="/" element={<Navigate replace to="/home" />} />
+          <Route path="/home" element={<Home type="newsfeed" />} />
+          <Route path="/bookmarks" element={<Home type="bookmarks" />} />
+          <Route path="/profile" element={<Profile />} />
+        </Route>
       </Routes>
-      <NavBar/>
     </div>
   )
 }

@@ -15,6 +15,7 @@ export const signup = async (email, password) => {
       const token = await response.json();
       localStorage.setItem('token', token.token);
       return true;
+
   }
 }
 

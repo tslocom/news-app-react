@@ -26,7 +26,7 @@ export const getSavedArticles = async () => {
 
 export const addSavedArticle = async (item) => {
       const token = localStorage.getItem('token');
-      const response = await fetch(`${BASE_URL}bookmarks/`, {
+      const response = await fetch(`${BASE_URL}bookmarks/+/`, {
           method: "POST",
           headers: {
               "Content-Type": "application/json",
@@ -35,13 +35,12 @@ export const addSavedArticle = async (item) => {
           body: JSON.stringify(item),
       });
       if (response.ok) {
-        const savedItem = await response.json();
-        return(savedItem); 
+        return(item); 
     }}
 
 export const removeSavedArticle = async (id) => {
   const token = localStorage.getItem('token');
-  const response = await fetch (`${BASE_URL}bookmarks/${id}`, {
+  const response = await fetch (`${BASE_URL}bookmarks/${id}/`, {
     method: "DELETE",
     headers: {
     "Content-Type": "application/json",
@@ -51,3 +50,21 @@ export const removeSavedArticle = async (id) => {
   if (response.ok) {
     return id;
   }}
+
+export const search = async (cleanQuery, type, isTagSearch) => {
+  const token = localStorage.getItem('token');
+  const search_parameters = new URLSearchParams({
+    search_term: cleanQuery,
+    by_tag: isTagSearch
+  })
+  const response = await fetch(`${BASE_URL}${type}/search?${search_parameters.toString()}`, {
+    method: "GET",
+    headers: {
+      "Authorization": `Token ${token}`
+    },
+  });
+  if (response.ok) {
+    const data = await response.json();
+    return(data.articles);
+  }
+};

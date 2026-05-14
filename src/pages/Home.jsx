@@ -1,12 +1,13 @@
-import { useState } from 'react'
 import NewsFeed from '../components/NewsFeed.jsx'
-import './Home.css'
+import TopBar from '../components/TopBar.jsx'
+import Sidebar from '../components/SideBar.jsx'
 
-function Home({ onSave, onUnsave, savedArticles, articles }) {
+function Home({ type }) {
   return (
-    <div className='home'>
-      <h1>Welcome to the Anti News App</h1>
-      <NewsFeed onSave={onSave} onUnsave={onUnsave} savedArticles={savedArticles} articles={articles}/>
+    <div className='min-h-screen bg-background'>
+      <TopBar type={type} />
+      <Sidebar/>
+      <NewsFeed type={type} />
     </div>
   )
 }
