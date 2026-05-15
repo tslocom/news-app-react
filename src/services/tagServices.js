@@ -1,4 +1,4 @@
-const BASE_URL = "http://127.0.0.1:8000/api/articles/"
+const BASE_URL = `${import.meta.env.VITE_API_URL}/api/articles/`;
 
 export const getTags = async () => {
     const token = localStorage.getItem('token')
