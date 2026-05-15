@@ -8,6 +8,7 @@ import InitialPublicationSelector from './pages/InitialPublicationSelector.jsx'
 import AppLayout from './components/AppLayout.jsx'
 
 function App() {
+  const token = localStorage.getItem('token')
 
   return (
     <div className='app'>
@@ -15,12 +16,14 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/choosepublications" element={<InitialPublicationSelector />} />
         <Route path="/choosetags" element={<InitialTagSelector />} />
+        <Route path="/" element={<Navigate replace to={token ? '/home' : '/login'} />} />
 
-        <Route element={<ProtectedRoute><AppLayout /></ProtectedRoute>}>
-          <Route path="/" element={<Navigate replace to="/home" />} />
+        <Route element={<ProtectedRoute />}>
+          <Route element={<AppLayout />}>
           <Route path="/home" element={<Home type="newsfeed" />} />
           <Route path="/bookmarks" element={<Home type="bookmarks" />} />
           <Route path="/profile" element={<Profile />} />
+          </Route>
         </Route>
       </Routes>
     </div>
