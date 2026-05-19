@@ -24,7 +24,7 @@ function NewsFeed({ type }) {
   ];
 
   return (
-    <main className="lg:ml-64 pt-16 md:pt-24 p-4 md:p-8 min-h-screen bg-background">
+    <main className="ml-12 md:ml-16 lg:ml-64 pt-16 md:pt-24 p-4 md:p-8 min-h-screen bg-background">
       <div className="flex-1 flex flex-col gap-6">
         <div className="flex items-baseline justify-between border-b border-outline-variant pb-2 mb-2">
           <h1 className="font-serif text-display-xl text-on-surface">
